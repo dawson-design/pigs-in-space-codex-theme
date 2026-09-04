@@ -53,14 +53,23 @@ Canonical Zed palette mappings used by the CLI theme include:
 The `.tmTheme` uses dark green and red diff backgrounds rather than Zed's
 translucent overlays because Codex reads diff backgrounds as opaque RGB colors.
 
-## Codex app
+## ChatGPT Desktop App
 
-The existing, separate Codex app theme artifact is preserved in this directory.
-Its current import string is:
+The desktop app uses a `codex-theme-v1` share string rather than a TextMate
+theme. Pigs in Space uses the canonical Zed surface, foreground, accent, and
+semantic colors with Material Theme Palenight as the closest built-in code
+theme. It leaves the UI and code fonts at their defaults.
+
+To install it, copy the complete contents of
+`pigs-in-space.codex-theme.json`. In the ChatGPT Desktop App, open
+**Settings > General > Appearance**, select the dark theme section, choose
+**Import**, paste the share string, and choose **Import theme**.
+
+The import string is:
 
 ```text
-codex-theme-v1:{"codeThemeId":"dracula","theme":{"accent":"#ff79c6","contrast":60,"fonts":{"code":"Bitstream Vera Sans Mono","ui":null},"ink":"#f8f8f2","opaqueWindows":true,"semanticColors":{"diffAdded":"#50fa7b","diffRemoved":"#ff5555","skill":"#ff79c6"},"surface":"#282a36"},"variant":"dark"}
+codex-theme-v1:{"codeThemeId":"material-theme-palenight","theme":{"accent":"#4C9C9D","contrast":60,"fonts":{"code":null,"ui":null},"ink":"#A0B0C1","opaqueWindows":true,"semanticColors":{"diffAdded":"#C3E88D","diffRemoved":"#FF5370","skill":"#4C9C9D"},"surface":"#21262C"},"variant":"dark"}
 ```
 
-Codex app themes use a different `codex-theme-v1` format and are not loaded by
-Codex CLI.
+Desktop app themes use a different `codex-theme-v1` format and are not loaded
+by Codex CLI.
